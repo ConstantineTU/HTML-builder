@@ -1,5 +1,4 @@
 const path = require('path')
-const chalk = require('chalk')
 const fs = require('fs')
 const fsPromises = require('fs/promises')
 
@@ -13,7 +12,7 @@ async function getFilesInFolder() {
 				const fileExtName = (path.extname(file.name)).slice(1)
 				fs.stat(path.join(secretDir, file.name), (error, stats) => {
 					const fileSize = `${(stats.size / 1024).toFixed(3)}kb`
-					console.log(`${chalk.green(fileName)} - ${chalk.blue(fileExtName)} - ${chalk.red(fileSize)}`)
+					console.log(`${fileName} - ${fileExtName} - ${fileSize}`)
 				})
 			}
 		}

@@ -2,7 +2,6 @@ const fs = require('fs')
 const path = require('path')
 const process = require('process')
 const readline = require('readline')
-const chalk = require('chalk')
 let isFirstLine = false
 const { stdin: input, stdout: output } = require('process');
 
@@ -16,14 +15,14 @@ fs.writeFile(file, '', err => {
 		throw err
 	}
 })
-console.log(chalk.green('Приветствую! Введите сообщение: '))
+console.log(('Приветствую! Введите сообщение: '))
 
 rl.on('line', (input) => {
 	if (input.trim() === 'exit') {
 		endInput()
 		process.exit()
 	} else {
-		console.log(chalk.red('Ваше сообщение добавлено в файл!'), chalk.green('Введите новое сообщение: '))
+		console.log(('Ваше сообщение добавлено в файл!'), ('Введите новое сообщение: '))
 		if (!isFirstLine) {
 			fs.appendFile(file, `${input}`, err => {
 				if (err) {
@@ -42,6 +41,6 @@ rl.on('line', (input) => {
 
 })
 function endInput() {
-	console.log(chalk.green('Желаю вам счастья, успехов в учёбе и до новых встреч!'), chalk.red('Завершаю работу скрипта'))
+	console.log(('Желаю вам счастья, успехов в учёбе и до новых встреч!'), ('Завершаю работу скрипта'))
 }
 process.on('beforeExit', endInput)
