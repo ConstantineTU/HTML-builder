@@ -8,7 +8,6 @@ const bundle = path.join(project, 'bundle.css')
 copyDir()
 async function copyDir() {
 	await fsPromises.rm(bundle, { recursive: true, force: true })
-	await fsPromises.mkdir(project, { recursive: true })
 	getAppendInBundle()
 }
 
