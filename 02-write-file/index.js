@@ -8,8 +8,6 @@ const { stdin: input, stdout: output } = require('process');
 const rl = readline.createInterface({ input, output });
 const file = path.join(__dirname, 'text.txt')
 
-
-
 fs.writeFile(file, '', err => {
 	if (err) {
 		throw err
