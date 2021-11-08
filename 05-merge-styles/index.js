@@ -49,6 +49,7 @@ return new Promise(function (resolve, reject) {
 					}
 				}, 0);
 				if (i === files.length - 1) {
+					i = 0
 					console.log(`Скрипт выполнил поставленную задачу и завершает работу...`)
 				}
 			}
